@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Want List</title>
+<link rel="stylesheet" href="/css/bootstrap.css" />
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>* Want List *</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>商品名</th>
+					<th>価格</th>
+					<th>登録日時</th>
+					<th>更新日時</th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="want : ${wants}" th:object="${want}">
+					<td th:text="*{id}"></td>
+					<td th:text="*{item}"></td>
+					<td th:text="*{price}"></td>
+					<td th:text="*{createdAt}"></td>
+					<td th:text="*{updatedAt}"></td>
+					<td><a class="btn btn-default btn-xs" th:href="@{/wants/{id}(id=*{id})}">参照</a></td>
+					<td><a class="btn btn-default btn-xs" th:href="@{/wants/{id}/edit(id=*{id})}">編集</a></td>
+					<td>
+						<form th:action="@{/wants/{id}(id=*{id})}" th:method="delete">
+							<input class="btn btn-default btn-xs" type="submit" value="削除" />
+						</form>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<a class="btn btn-default" href="/wants/new">新規作成</a>
+	</div>
+</body>
+</html>
