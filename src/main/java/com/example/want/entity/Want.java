@@ -1,14 +1,11 @@
 package com.example.want.entity;
 
-import java.time.LocalTime;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
 @Entity
 public class Want {
@@ -19,10 +16,8 @@ public class Want {
 	private Long id;
 	private String item;
 	private Integer price;
-	@CreatedDate
-    private LocalTime createdAt;
-	@LastModifiedDate
-    private LocalTime updatedAt;
+    private Date createdAt;
+    private Date updatedAt;
 
 	public Long getId() {
         return id;
@@ -42,16 +37,16 @@ public class Want {
     public void setPrice(Integer price) {
         this.price = price;
     }
-	public LocalTime getCreatedAt() {
+	public Date getCreatedAt() {
 		return createdAt;
 	}
-	public void setCreatedAt(LocalTime createdAt) {
+	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
-	public LocalTime getUpdatedAt() {
+	public Date getUpdatedAt() {
 		return updatedAt;
 	}
-	public void setUpdatedAt(LocalTime updatedAt) {
+	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
 
