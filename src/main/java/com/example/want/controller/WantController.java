@@ -25,4 +25,9 @@ public class WantController {
 		model.addAttribute("wants", wants);
 		return "wants/index";
 	}
+
+	@GetMapping("new")
+	public String newWant(Model model) {
+		return "wants/new";
+	}
 }
