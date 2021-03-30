@@ -1,7 +1,5 @@
 package com.example.want.entity;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,8 +14,8 @@ public class Want {
 	private Long id;
 	private String item;
 	private Integer price;
-    private Date createdAt;
-    private Date updatedAt;
+//    private Date createdAt;
+//    private Date updatedAt;
 
 	public Long getId() {
         return id;
@@ -37,22 +35,22 @@ public class Want {
     public void setPrice(Integer price) {
         this.price = price;
     }
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
+//	public Date getCreatedAt() {
+//		return createdAt;
+//	}
+//	public void setCreatedAt(Date createdAt) {
+//		this.createdAt = createdAt;
+//	}
+//	public Date getUpdatedAt() {
+//		return updatedAt;
+//	}
+//	public void setUpdatedAt(Date updatedAt) {
+//		this.updatedAt = updatedAt;
+//	}
 
 	@Override
 	public String toString() {
-		return "Want [id=" + id + ", item=" + item + ", price=" + price +", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
+		return "Want [id=" + id + ", item=" + item + ", price=" + price  + "]";
 	}
 }
 

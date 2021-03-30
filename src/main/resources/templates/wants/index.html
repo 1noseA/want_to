@@ -16,8 +16,6 @@
 					<th>ID</th>
 					<th>商品名</th>
 					<th>価格</th>
-					<th>登録日時</th>
-					<th>更新日時</th>
 					<th></th>
 					<th></th>
 					<th></th>
@@ -28,8 +26,6 @@
 					<td th:text="*{id}"></td>
 					<td th:text="*{item}"></td>
 					<td th:text="*{price}"></td>
-					<td th:text="*{createdAt}"></td>
-					<td th:text="*{updatedAt}"></td>
 					<td><a class="btn btn-default btn-xs" th:href="@{/wants/{id}(id=*{id})}">参照</a></td>
 					<td><a class="btn btn-default btn-xs" th:href="@{/wants/{id}/edit(id=*{id})}">編集</a></td>
 					<td>

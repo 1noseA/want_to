@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.want.entity.Want;
@@ -35,6 +37,21 @@ public class WantController {
 
 	@PostMapping
 	public String create(@ModelAttribute Want want) {
+		wantService.save(want);
+		return "redirect:/wants";
+	}
+
+	@GetMapping("{id}/edit")
+	// @PathVariableはURL上の値を取得できる
+	public String edit(@PathVariable Long id, Model model) {
+		Want want = wantService.findById(id);
+		model.addAttribute("want", want);
+		return "wants/edit";
+	}
+
+	@PutMapping("{id}")
+	public String update(@PathVariable Long id, @ModelAttribute Want want) {
+		want.setId(id);
 		wantService.save(want);
 		return "redirect:/wants";
 	}
